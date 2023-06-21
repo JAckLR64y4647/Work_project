@@ -1,13 +1,20 @@
 <template>
     <div v-if="groupedWeather && Object.keys(groupedWeather).length">
-      <h3>Погода на неделю</h3>
+      <h3 class="title-style">Погода на неделю</h3>
       <div class="weather-table">
-        <div class="weather-row header">
+        <div
+          class="weather-row header"
+          style="width: 100%;"
+        >
           <div class="weather-cell">Дата</div>
           <div class="weather-cell">Температура (день/ночь)</div>
           <div class="weather-cell">Описание</div>
         </div>
-        <div v-for="(weatherGroup, day) in groupedWeather" :key="day" class="weather-row">
+        <div
+          v-for="(weatherGroup, day) in groupedWeather"
+          :key="day"
+          class="weather-row"
+        >
           <div class="weather-cell">{{ day }}</div>
           <div class="weather-cell">{{ getTemperatureString(weatherGroup) }}</div>
           <div class="weather-cell">{{ getWeatherDescription(weatherGroup) }}</div>
@@ -15,7 +22,7 @@
       </div>
     </div>
   </template>
-  
+    
   <script>
   import { ref, onMounted } from 'vue';
   
@@ -96,8 +103,6 @@
     },
   };
   </script>
-  
-  <style scoped>
-  @import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
-  @import url('../css/WeatherWeek.css');
-  </style>
+    
+  <style scoped>@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
+  @import url('../css/WeatherWeek.css');</style>
