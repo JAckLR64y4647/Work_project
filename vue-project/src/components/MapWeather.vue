@@ -17,9 +17,9 @@
   <script setup>
   import { ref } from "vue";
   
-  const center = ref([20.123123, 40]); //координаты
-  const projection = ref("EPSG:4326"); // проекция карты (но тебе похуй на неё)
-  const zoom = ref(8); //зум карты
+  const center = ref([20.123123, 40]);
+  const projection = ref("EPSG:4326");
+  const zoom = ref(8);
   </script>
   
   <style scoped>
