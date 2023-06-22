@@ -1,7 +1,7 @@
 <template>
   <div class="weather-display">
-    <CurrentWeather :selectedCity="selectedCity" />
-    <WeeklyWeather :selectedCity="selectedCity" />
+    <CurrentWeather :selectedCity="selectedCity" :selectedCityCoordinates="selectedCityCoordinates" />
+    <WeeklyWeather :selectedCity="selectedCity" :selectedCityCoordinates="selectedCityCoordinates" />
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 #app {
   text-align: center;
   padding: 20px;
-  background-color: #a2d0eb;
+  background-color: #baafeb;
 }
 
 .navbar-brand {
@@ -25,8 +25,25 @@
 .title-style {
   margin-top: 30px;
   margin-bottom: 45px;
+
   padding: 4px;
   background-color: white;
   border-radius: 16px;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); border-radius: 16px;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  border-radius: 16px;
+}
+
+@media (min-width: 1024px) {
+  .title-style {
+    margin-top: 30px;
+    margin-bottom: 45px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 4px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
+    border-radius: 16px;
+  }
 }

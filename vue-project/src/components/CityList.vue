@@ -1,18 +1,19 @@
 <template>
-    <div class="city-list">
-      <label for="city">Выберите город:</label>
-      <select id="city" v-model="selectedCity" class="form-control">
-        <option v-for="city in cities" :value="city.name">{{ city.name }}</option>
-      </select>
-    </div>
-  </template>
-  <script>
-  export default {
-    data() {
-      return {
-        selectedCity: '',
-        cities: [
-          { name: 'Киев', coordinates: { lat: 50.4501, lng: 30.5234 } },
+  <div class="city-list">
+    <label for="city">Выберите город:</label>
+    <select id="city" v-model="selectedCity" class="form-control" @change="handleCityChange">
+      <option v-for="city in cities" :value="city.name">{{ city.name }}</option>
+    </select>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      selectedCity: '',
+      cities: [
+      { name: 'Киев', coordinates: { lat: 50.4501, lng: 30.5234 } },
           { name: 'Харьков', coordinates: { lat: 49.9935, lng: 36.2304 } },
           { name: 'Одесса', coordinates: { lat: 46.4825, lng: 30.7233 } },
           { name: 'Днепр', coordinates: { lat: 48.4647, lng: 35.0462 } },
@@ -28,28 +29,17 @@
           { name: 'Чернигов', coordinates: { lat: 51.4982, lng: 31.2890 } },
           { name: 'Черкассы', coordinates: { lat: 49.4444, lng: 32.0598 } },
           { name: 'Житомир', coordinates: { lat: 50.2547, lng: 28.6587 } },
-        ],
-      };
+      ],
+    };
+  },
+  methods: {
+    handleCityChange() {
+      const city = this.cities.find((item) => item.name === this.selectedCity);
+      this.$emit('select', city);
     },
-    watch: {
-      selectedCity() {
-        const city = this.cities.find((item) => item.name === this.selectedCity);
-        this.$emit('select', city);
-      },
-    },
-  };
-  </script>
-  <style scoped>
-  h1 {
-    font-size: 24px;
-  }
-  
-  ul {
-    list-style-type: none;
-    padding-left: 0;
-  }
-  
-  li {
-    margin-bottom: 5px;
-  }
-  </style>
+  },
+};
+</script>
+<style scoped>
+/* Стили компонента */
+</style>
