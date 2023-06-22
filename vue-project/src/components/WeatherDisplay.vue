@@ -10,6 +10,8 @@ import { ref } from 'vue';
 import CurrentWeather from '../components/CurrentWeather.vue';
 import WeeklyWeather from '../components/WeeklyWeather.vue';
 
+
+
 export default {
   props: ['selectedCity'],
   components: {
@@ -25,6 +27,7 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css");
 .weather-display {
   margin-top: 20px;
 }
