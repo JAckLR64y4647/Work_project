@@ -28,7 +28,7 @@ const handleCitySelect = (city) => {
 
 <style scoped>
 
-  .map-view {
+.map-view {
     display: flex;
     height: 100%;
     width: 100%;
